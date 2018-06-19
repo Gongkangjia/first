@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>userOperation</title>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+
+    <!-- 引入 echarts.js -->
+    <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts-en.common.js">
+    </script>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h1>天翼生活用户运营报表</h1>
+    <ul id="myTab" class="nav nav-tabs">
+		<li class="active">
+			<a href="#home" data-toggle="tab">
+				 趋势图
+			</a>
+		</li>
+		<li><a href="#user" data-toggle="tab">用户详细数据</a></li>
+		<li><a href="#qiandao" data-toggle="tab">签到送积分</a></li>
+		<li><a href="#xinren" data-toggle="tab">新人礼包</a></li>
+		<li><a href="#kuaidi" data-toggle="tab">流量快递</a></li>
+		<li><a href="#tixing" data-toggle="tab">自动化提醒</a></li>
+<!-- 	<li class="dropdown">
+		<a href="#" id="myTabDrop1" class="dropdown-toggle" 
+		   data-toggle="dropdown">Java 
+			<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+			<li><a href="#jmeter" tabindex="-1" data-toggle="tab">jmeter</a></li>
+			<li><a href="#ejb" tabindex="-1" data-toggle="tab">ejb</a></li>
+		</ul>
+	</li> -->
+    </ul>
+<div id="myTabContent" class="tab-content">
+	<div class="tab-pane fade in active" id="home">
+		    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+	</div>
+	<div class="tab-pane fade" id="user">
+		<table class="table table-bordered table-condensed">
+			<caption>天翼生活用户信息</caption>
+			<thead>
+				<tr>
+					<th>天翼生活</th>
+					<th>2018-06-01</th>
+					<th>2018-06-02</th>
+					<th>2018-06-03</th>
+					<th>2018-06-04</th>
+					<th>2018-06-05</th>
+					<th>2018-06-06</th>
+					<th>2018-06-07</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="active">
+					<td>新增用户数-安装</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr class="success">
+					<td>新注册用户数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>DAU</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>启动次数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>MAU</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>MAU变化值</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+		<hr>
+		<table class="table table-bordered table-condensed">
+			<thead>
+				<tr>
+					<th>江苏电信公众号</th>
+					<th>2018-06-01</th>
+					<th>2018-06-02</th>
+					<th>2018-06-03</th>
+					<th>2018-06-04</th>
+					<th>2018-06-05</th>
+					<th>2018-06-06</th>
+					<th>2018-06-07</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="active">
+					<td>总用户</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr class="success">
+					<td>其中：绑定总用户</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>日活</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>其中：绑定日活</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>月活</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>其中：绑定月活</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>年活</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>其中：绑定年活</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>日新增用户</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>其中：日新增绑定</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>日取关用户</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>日净增用户</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>月活</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>日召回</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+		<hr>
+		<table class="table table-bordered table-condensed">
+			<thead>
+				<tr>
+					<th>网厅</th>
+					<th>2018-06-01</th>
+					<th>2018-06-02</th>
+					<th>2018-06-03</th>
+					<th>2018-06-04</th>
+					<th>2018-06-05</th>
+					<th>2018-06-06</th>
+					<th>2018-06-07</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="active">
+					<td>UV</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr class="success">
+					<td>日活（号码）</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>月活（号码）</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>年活（号码）</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+		<hr>
+		<table class="table table-bordered table-condensed">
+			<thead>
+				<tr>
+					<th>欢go</th>
+					<th>2018-06-01</th>
+					<th>2018-06-02</th>
+					<th>2018-06-03</th>
+					<th>2018-06-04</th>
+					<th>2018-06-05</th>
+					<th>2018-06-06</th>
+					<th>2018-06-07</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="active">
+					<td>总用户数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr class="success">
+					<td>启动次数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>活跃数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>新增数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>月活跃率</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>月累计活跃数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="tab-pane fade" id="qiandao">
+		<table class="table table-bordered table-condensed">
+			<caption>签到送积分信息</caption>
+			<thead>
+				<tr>
+					<th>签到送积分-天翼生活</th>
+					<th>2018-06-01</th>
+					<th>2018-06-02</th>
+					<th>2018-06-03</th>
+					<th>2018-06-04</th>
+					<th>2018-06-05</th>
+					<th>2018-06-06</th>
+					<th>2018-06-07</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="active">
+					<td>签到送积分-参与人次</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr class="success">
+					<td>签到送积分-参与人数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>日签到无积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>日签到5积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>日签到20积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>日签到15积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>日签到10积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>日签到累计发放积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+		<hr>
+		<table class="table table-bordered table-condensed">
+			<thead>
+				<tr>
+					<th>签到送积分-网厅</th>
+					<th>2018-06-01</th>
+					<th>2018-06-02</th>
+					<th>2018-06-03</th>
+					<th>2018-06-04</th>
+					<th>2018-06-05</th>
+					<th>2018-06-06</th>
+					<th>2018-06-07</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="active">
+					<td>签到送积分-参与人次</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr class="success">
+					<td>签到送积分-参与人数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>日签到无积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>日签到20积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>日签到15积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>日签到10积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>日签到5积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>日签到累计发放积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+		<hr>
+		<table class="table table-bordered table-condensed">
+			<thead>
+				<tr>
+					<th>签到送积分-电信公众号</th>
+					<th>2018-06-01</th>
+					<th>2018-06-02</th>
+					<th>2018-06-03</th>
+					<th>2018-06-04</th>
+					<th>2018-06-05</th>
+					<th>2018-06-06</th>
+					<th>2018-06-07</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="active">
+					<td>签到送积分-参与人次</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr class="success">
+					<td>签到送积分-参与人数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>日签到无积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>日签到20积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>日签到15积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>日签到10积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>日签到5积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>日签到累计发放积分</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="tab-pane fade" id="xinren">
+		<table class="table table-bordered table-condensed">
+			<caption>新人礼包-天翼生活信息</caption>
+			<thead>
+				<tr>
+					<th>新人礼包-天翼生活</th>
+					<th>2018-06-01</th>
+					<th>2018-06-02</th>
+					<th>2018-06-03</th>
+					<th>2018-06-04</th>
+					<th>2018-06-05</th>
+					<th>2018-06-06</th>
+					<th>2018-06-07</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="active">
+					<td>新增用户数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr class="success">
+					<td>参与人次</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>参与人数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>奖品领取人数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>1G流量使用人数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>充值人数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="tab-pane fade" id="kuaidi">
+		<table class="table table-bordered table-condensed">
+			<caption>流量快递信息</caption>
+			<thead>
+				<tr>
+					<th>流量快递</th>
+					<th>档次</th>
+					<th>2018-06-01</th>
+					<th>2018-06-02</th>
+					<th>2018-06-03</th>
+					<th>2018-06-04</th>
+					<th>2018-06-05</th>
+					<th>2018-06-06</th>
+					<th>2018-06-07</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="active">
+					<td rowspan='2'>参与</td>
+					<td>参与人次</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr class="success">
+					<td>参与人数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td rowspan='4'>抽中</td>
+					<td>200M</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td> 
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>900M</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>2000M</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>5120M</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td rowspan='4'>领取</td>
+					<td>100M</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>300M</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>500M</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>1024M</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td rowspan='4'>订购</td>
+					<td>100M</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>300M</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>500M</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>1024M</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="tab-pane fade" id="tixing">
+		<table class="table table-bordered table-condensed">
+			<caption>自动化提醒信息</caption>
+			<thead>
+				<tr>
+					<th>自动化提醒</th>
+					<th>2018-06-01</th>
+					<th>2018-06-02</th>
+					<th>2018-06-03</th>
+					<th>2018-06-04</th>
+					<th>2018-06-05</th>
+					<th>2018-06-06</th>
+					<th>2018-06-07</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="active">
+					<td>30天未登陆</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr class="success">
+					<td>当日召回人数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>7天未登陆</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>当日召回人数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>30天未签到</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>当日召回人数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>15天未登陆</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>当日召回人数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>签到中断</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>当日召回人数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>流量到期提醒</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>当日召回人数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="warning">
+					<td>总计提醒人数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+				<tr  class="danger">
+					<td>总计召回人数</td>
+					<td>1000</td>
+					<td>2000</td>
+					<td>3000</td>
+					<td>4000</td>
+					<td>5000</td>
+					<td>6000</td>
+					<td>7000</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div> 
+</body>
+
+</html>
+<script>
+	option = {
+    title: {
+        text: '折线图堆叠'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['周一','周二','周三','周四','周五','周六','周日']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [
+        {
+            name:'邮件营销',
+            type:'line',
+            stack: '总量',
+            data:[120, 132, 101, 134, 90, 230, 210]
+        },
+        {
+            name:'联盟广告',
+            type:'line',
+            stack: '总量',
+            data:[220, 182, 191, 234, 290, 330, 310]
+        },
+        {
+            name:'视频广告',
+            type:'line',
+            stack: '总量',
+            data:[150, 232, 201, 154, 190, 330, 410]
+        },
+        {
+            name:'直接访问',
+            type:'line',
+            stack: '总量',
+            data:[320, 332, 301, 334, 390, 330, 320]
+        },
+        {
+            name:'搜索引擎',
+            type:'line',
+            stack: '总量',
+            data:[820, 932, 901, 934, 1290, 1330, 1320]
+        }
+    ]
+};
+</script>
